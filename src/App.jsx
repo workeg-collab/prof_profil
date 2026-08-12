@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import AboutSection from './components/AboutSection';
 import CompanyPolicies from './components/CompanyPolicies';
 import ServicesSection from './components/ServicesSection';
+import ContractingSection from './components/ContractingSection';
 import ClientsSection from './components/ClientsSection';
 import WhyUs from './components/WhyUs';
 import QuoteFormSection from './components/QuoteFormSection';
@@ -20,6 +21,7 @@ export default function App() {
           <AboutSection />
           <CompanyPolicies />
           <ServicesSection />
+          <ContractingSection />
           <ClientsSection />
           <WhyUs />
           <QuoteFormSection />

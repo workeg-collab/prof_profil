@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, MessageCircle, Menu, X, Globe, ChevronDown } from 'lucide-react';
+import { Phone, MessageCircle, Menu, X, Globe } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Header() {
@@ -17,8 +17,8 @@ export default function Header() {
 
   const whatsappLink = "https://wa.me/201142466903?text=" + encodeURIComponent(
     isRtl 
-      ? "مرحباً شركة المحترف للتجارة والتوريدات، أود الاستفسار عن الخدمات والأنظمة المتاحة لديكم"
-      : "Hello Professional Trading & Supplies, I would like to inquire about your available services and systems"
+      ? "مرحباً شركة المحترف للتجارة والمقاولات والتوريدات، أود الاستفسار عن خدمات وأنظمة التوريد والمقاولات"
+      : "Hello Professional Trading, Contracting & Supplies, I would like to inquire about your services"
   );
 
   return (
@@ -40,19 +40,20 @@ export default function Header() {
                 {isRtl ? 'شركة المحترف' : 'Al-Mohtaraf'}
               </span>
               <span className="bg-amber-100 text-amber-800 text-[11px] font-extrabold px-2 py-0.5 rounded-full border border-amber-300">
-                {isRtl ? 'للتجارة والتوريدات' : 'Trading & Supplies'}
+                {isRtl ? 'للمقاولات والتوريدات' : 'Contracting & Supplies'}
               </span>
             </div>
-            <p className="text-[11px] text-slate-500 font-medium">Professional Trading & Supplies Co.</p>
+            <p className="text-[11px] text-slate-500 font-medium">Professional Contracting & Supplies Co.</p>
           </div>
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-5 text-sm font-bold text-slate-700">
+        <nav className="hidden lg:flex items-center gap-4 text-xs xl:text-sm font-bold text-slate-700">
           <a href="#hero" className="hover:text-amber-600 transition-colors">{isRtl ? 'الرئيسية' : 'Home'}</a>
           <a href="#about" className="hover:text-amber-600 transition-colors">{isRtl ? 'عن الشركة' : 'About Us'}</a>
-          <a href="#policies" className="hover:text-amber-600 transition-colors">{isRtl ? 'سياسة الرضا والتطوير' : 'Policies'}</a>
-          <a href="#services" className="hover:text-amber-600 transition-colors">{isRtl ? 'خدماتنا (12)' : 'Services (12)'}</a>
+          <a href="#policies" className="hover:text-amber-600 transition-colors">{isRtl ? 'سياسة الرضا' : 'Policies'}</a>
+          <a href="#services" className="hover:text-amber-600 transition-colors">{isRtl ? 'خدماتنا (12)' : 'Services'}</a>
+          <a href="#contracting" className="hover:text-amber-600 transition-colors font-black text-amber-700 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200">{isRtl ? 'قسم المقاولات' : 'Contracting'}</a>
           <a href="#clients" className="hover:text-amber-600 transition-colors">{isRtl ? 'العملاء' : 'Clients'}</a>
           <a href="#quote" className="hover:text-amber-600 transition-colors">{isRtl ? 'طلب عرض سعر' : 'Get Quote'}</a>
           <a href="#contact" className="hover:text-amber-600 transition-colors">{isRtl ? 'تواصل معنا' : 'Contact'}</a>
@@ -117,6 +118,7 @@ export default function Header() {
           <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block py-2 border-b border-slate-100">{isRtl ? 'عن المحترف' : 'About Us'}</a>
           <a href="#policies" onClick={() => setMobileMenuOpen(false)} className="block py-2 border-b border-slate-100">{isRtl ? 'سياسة إرضاء العملاء' : 'Policies'}</a>
           <a href="#services" onClick={() => setMobileMenuOpen(false)} className="block py-2 border-b border-slate-100">{isRtl ? 'خدماتنا وأنظمتنا (12)' : 'Services (12)'}</a>
+          <a href="#contracting" onClick={() => setMobileMenuOpen(false)} className="block py-2 border-b border-slate-100 text-amber-700 font-black">{isRtl ? 'قسم المقاولات العامة' : 'Contracting Sector'}</a>
           <a href="#clients" onClick={() => setMobileMenuOpen(false)} className="block py-2 border-b border-slate-100">{isRtl ? 'عملاؤنا' : 'Clients'}</a>
           <a href="#quote" onClick={() => setMobileMenuOpen(false)} className="block py-2 border-b border-slate-100">{isRtl ? 'طلب عرض سعر' : 'Get Quote'}</a>
           <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-amber-600 font-extrabold">{isRtl ? 'تواصل معنا' : 'Contact Us'}</a>
