@@ -1,34 +1,40 @@
 import React, { useState } from 'react';
-import { Building2, Award, Landmark, Briefcase, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { Building2, Award, Landmark, Briefcase, CheckCircle2 } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function ClientsSection() {
   const [activeTab, setActiveTab] = useState('all');
+  const { isRtl } = useLanguage();
 
   const govClients = [
-    { name: 'الهيئة العربية للتصنيع', code: 'AOI' },
-    { name: 'مكتبة الإسكندرية (مكتبة الإسكندرية الجديدة)', code: 'BibAlex' },
-    { name: 'شبكة الجامعات المصرية', code: 'EUN' },
-    { name: 'وزارة الدفاع - القوات الجوية', code: 'Air Force' },
-    { name: 'وزارة الدفاع - القوات المسلحة', code: 'Armed Forces' },
-    { name: 'وزارة التجارة والصناعة', code: 'MoCI' },
-    { name: 'وزارة الكهرباء والطاقة المتجددة', code: 'MOEE' },
-    { name: 'الهيئة القومية للإنتاج الحربي', code: 'NSPO / MP' },
-    { name: 'وزارة الإنتاج الحربي', code: 'MoMP' },
-    { name: 'وزارة التضامن الاجتماعي', code: 'MoSS' },
-    { name: 'مؤسسات حكومية وهيئات رسمية أخرى...', code: 'Etc.' }
+    { nameAr: 'جهاز الأمن الوطني', nameEn: 'National Security Agency', code: 'NSA' },
+    { nameAr: 'وزارة الداخلية', nameEn: 'Ministry of Interior', code: 'MoI' },
+    { nameAr: 'الهيئة العربية للتصنيع', nameEn: 'Arab Organization for Industrialization', code: 'AOI' },
+    { nameAr: 'مكتبة الإسكندرية (مكتبة الإسكندرية الجديدة)', nameEn: 'Bibliotheca Alexandrina', code: 'BibAlex' },
+    { nameAr: 'شبكة الجامعات المصرية', nameEn: 'Egyptian Universities Network', code: 'EUN' },
+    { nameAr: 'وزارة الدفاع - القوات الجوية', nameEn: 'Ministry of Defense - Air Force', code: 'Air Force' },
+    { nameAr: 'وزارة الدفاع - القوات المسلحة', nameEn: 'Ministry of Defense - Armed Forces', code: 'Armed Forces' },
+    { nameAr: 'وزارة التجارة والصناعة', nameEn: 'Ministry of Trade & Industry', code: 'MoCI' },
+    { nameAr: 'وزارة الكهرباء والطاقة المتجددة', nameEn: 'Ministry of Electricity & Renewable Energy', code: 'MOEE' },
+    { nameAr: 'الهيئة القومية للإنتاج الحربي', nameEn: 'National Authority for Military Production', code: 'NSPO / MP' },
+    { nameAr: 'وزارة الإنتاج الحربي', nameEn: 'Ministry of Military Production', code: 'MoMP' },
+    { nameAr: 'وزارة التضامن الاجتماعي', nameEn: 'Ministry of Social Solidarity', code: 'MoSS' },
+    { nameAr: 'مؤسسات حكومية وهيئات رسمية أخرى...', nameEn: 'Other Governmental Agencies...', code: 'Etc.' }
   ];
 
   const privateClients = [
-    { name: 'تكنولوجيا الكمبيوتر المتقدمة', code: 'ACT' },
-    { name: 'خدمات فوجيتسو - مصر', code: 'Fujitsu Egypt' },
-    { name: 'آي بي إم مصر', code: 'IBM Egypt' },
-    { name: 'مصرتك - مصر للتكنولوجيا والمشروعات', code: 'MisrTech' },
-    { name: 'ميست - مصر لخدمات المعلومات والتجارة', code: 'MEST' },
-    { name: 'أوراسكوم للحلول التكنولوجية', code: 'OTS' },
-    { name: 'رايا التكامل', code: 'Raya Integration' },
-    { name: 'هندسة النظم المصرية', code: 'SEE' },
-    { name: 'هندسة الاتصال الداخلي PACC', code: 'PACC' },
-    { name: 'شركات ومؤسسات خاصة أخرى...', code: 'Etc.' }
+    { nameAr: 'شركة ماستر جاز', nameEn: 'Master Gas Company', code: 'Master Gas' },
+    { nameAr: 'شركة امحوتس / امحوسس', nameEn: 'EMHOSUS Company', code: 'EMHOSUS' },
+    { nameAr: 'تكنولوجيا الكمبيوتر المتقدمة', nameEn: 'Advanced Computer Technology', code: 'ACT' },
+    { nameAr: 'خدمات فوجيتسو - مصر', nameEn: 'Fujitsu Services - Egypt', code: 'Fujitsu Egypt' },
+    { nameAr: 'آي بي إم مصر', nameEn: 'IBM Egypt', code: 'IBM Egypt' },
+    { nameAr: 'مصرتك - مصر للتكنولوجيا والمشروعات', nameEn: 'MisrTech for Technology & Projects', code: 'MisrTech' },
+    { nameAr: 'ميست - مصر لخدمات المعلومات والتجارة', nameEn: 'MEST - Information & Trade Services', code: 'MEST' },
+    { nameAr: 'أوراسكوم للحلول التكنولوجية', nameEn: 'Orascom Technology Solutions', code: 'OTS' },
+    { nameAr: 'رايا التكامل', nameEn: 'Raya Integration', code: 'Raya Integration' },
+    { nameAr: 'هندسة النظم المصرية', nameEn: 'Systems Engineering Egypt', code: 'SEE' },
+    { nameAr: 'هندسة الاتصال الداخلي PACC', nameEn: 'PACC Systems Engineering', code: 'PACC' },
+    { nameAr: 'شركات ومؤسسات خاصة أخرى...', nameEn: 'Other Private Enterprises...', code: 'Etc.' }
   ];
 
   return (
@@ -39,18 +45,21 @@ export default function ClientsSection() {
         <div className="max-w-3xl mx-auto text-center space-y-4">
           <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-extrabold px-3.5 py-1 rounded-full">
             <Award className="w-4 h-4 text-amber-400" />
-            <span>شركاء النجاح والسابقة العريقة</span>
+            <span>{isRtl ? 'شركاء النجاح والسابقة العريقة' : 'Our Track Record & Partners'}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-black text-white leading-tight">
-            نبذة عن عملائنا الراضين عن خدمات المحترف
+            {isRtl ? 'نبذة عن عملائنا الراضين عن خدمات المحترف' : 'Our Prestigious Clients & Partners'}
           </h2>
           <p className="text-slate-400 text-sm md:text-base leading-relaxed">
-            أنشأت شركة المحترف منذ عام 2007 قائمة محترمة من العملاء والشركاء في القطاعين الحكومي والخاص بفضل جودة أنظمتنا وخدمات ما بعد البيع المتميزة.
+            {isRtl 
+              ? 'أنشأت شركة المحترف منذ عام 2007 قائمة محترمة من العملاء والشركاء في القطاعين الحكومي والخاص بفضل جودة أنظمتنا وخدمات ما بعد البيع المتميزة.'
+              : 'Since 2007, Professional Trading & Supplies has built an esteemed portfolio of satisfied clients across government and private sectors.'
+            }
           </p>
         </div>
 
         {/* Tab Switcher */}
-        <div className="flex justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-3">
           <button
             onClick={() => setActiveTab('all')}
             className={`px-6 py-3 rounded-2xl font-extrabold text-xs md:text-sm transition-all border ${
@@ -59,7 +68,7 @@ export default function ClientsSection() {
                 : 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-750'
             }`}
           >
-            جميع القطاعات
+            {isRtl ? 'جميع القطاعات' : 'All Sectors'}
           </button>
           <button
             onClick={() => setActiveTab('gov')}
@@ -70,7 +79,7 @@ export default function ClientsSection() {
             }`}
           >
             <Landmark className="w-4 h-4" />
-            <span>القطاع الحكومي ({govClients.length - 1})</span>
+            <span>{isRtl ? `القطاع الحكومي (${govClients.length - 1})` : `Government (${govClients.length - 1})`}</span>
           </button>
           <button
             onClick={() => setActiveTab('private')}
@@ -81,7 +90,7 @@ export default function ClientsSection() {
             }`}
           >
             <Briefcase className="w-4 h-4" />
-            <span>القطاع الخاص ({privateClients.length - 1})</span>
+            <span>{isRtl ? `القطاع الخاص (${privateClients.length - 1})` : `Private Sector (${privateClients.length - 1})`}</span>
           </button>
         </div>
 
@@ -97,12 +106,12 @@ export default function ClientsSection() {
                     <Landmark className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-black text-white">القطاع الحكومي والسيادي</h3>
-                    <p className="text-xs text-amber-400">وزارات وهئيات وقوات مسلحة</p>
+                    <h3 className="text-xl font-black text-white">{isRtl ? 'القطاع الحكومي والسيادي' : 'Government & Sovereign Sector'}</h3>
+                    <p className="text-xs text-amber-400">{isRtl ? 'وزارات وهئيات وأجهزة أمنية' : 'Ministries, Security & National Authorities'}</p>
                   </div>
                 </div>
                 <span className="bg-amber-500/10 text-amber-400 text-xs font-bold px-3 py-1 rounded-full border border-amber-500/20">
-                  شراكات موثوقة
+                  {isRtl ? 'شراكات موثوقة' : 'Trusted Partnerships'}
                 </span>
               </div>
 
@@ -114,7 +123,7 @@ export default function ClientsSection() {
                   >
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                     <div>
-                      <h4 className="text-xs font-bold text-slate-200">{client.name}</h4>
+                      <h4 className="text-xs font-bold text-slate-200">{isRtl ? client.nameAr : client.nameEn}</h4>
                       <span className="text-[10px] text-slate-400 font-mono">{client.code}</span>
                     </div>
                   </div>
@@ -132,12 +141,12 @@ export default function ClientsSection() {
                     <Briefcase className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-black text-white">القطاع الخاص والتكنولوجي</h3>
-                    <p className="text-xs text-blue-400">شركات عالمية ومحلية رائدة</p>
+                    <h3 className="text-xl font-black text-white">{isRtl ? 'القطاع الخاص والشركات' : 'Private Sector & Enterprises'}</h3>
+                    <p className="text-xs text-blue-400">{isRtl ? 'شركات عالمية ومحلية رائدة' : 'Leading Global & Local Enterprises'}</p>
                   </div>
                 </div>
                 <span className="bg-blue-500/10 text-blue-400 text-xs font-bold px-3 py-1 rounded-full border border-blue-500/20">
-                  حلول تقنية متميزة
+                  {isRtl ? 'حلول تقنية متميزة' : 'High-Performance Solutions'}
                 </span>
               </div>
 
@@ -149,7 +158,7 @@ export default function ClientsSection() {
                   >
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                     <div>
-                      <h4 className="text-xs font-bold text-slate-200">{client.name}</h4>
+                      <h4 className="text-xs font-bold text-slate-200">{isRtl ? client.nameAr : client.nameEn}</h4>
                       <span className="text-[10px] text-slate-400 font-mono">{client.code}</span>
                     </div>
                   </div>

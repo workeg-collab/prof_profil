@@ -1,36 +1,51 @@
 import React from 'react';
 import { ShieldCheck, Clock, Award, DollarSign, Headphones, HeartHandshake } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function WhyUs() {
+  const { isRtl } = useLanguage();
+
   const advantages = [
     {
-      title: 'التزام تام ودقيق بمواعيد التسليم',
-      desc: 'نعلم أهمية الوقت في إدارة المصانع والمشروعات؛ لذا نلتزم بالجدول الزمني المحدد بدون أي تأخير.',
+      titleAr: 'التزام تام ودقيق بمواعيد التسليم',
+      titleEn: 'Strict Delivery Timelines',
+      descAr: 'نعلم أهمية الوقت في إدارة المشروعات والمؤسسات؛ لذا نلتزم بالجدول الزمني المحدد بدون أي تأخير.',
+      descEn: 'We understand the value of time in project execution, strictly adhering to timelines without delays.',
       icon: <Clock className="w-6 h-6 text-amber-600" />
     },
     {
-      title: 'أعلى معايير الجودة والمواصفات القياسية',
-      desc: 'جميع المنتجات والخامات والمعدات الموردة تأتي مع شهادات جودة واختبارات فنية معتمدة رسمياً.',
+      titleAr: 'أعلى معايير الجودة والمواصفات القياسية',
+      titleEn: 'Highest Quality & Global Standards',
+      descAr: 'جميع المنتجات والأنظمة والمعدات الموردة تأتي مع شهادات جودة واختبارات فنية معتمدة رسمياً.',
+      descEn: 'All supplied products and surveillance systems carry official quality certification and test reports.',
       icon: <ShieldCheck className="w-6 h-6 text-amber-600" />
     },
     {
-      title: 'أسعار تنافسية وتسهيلات سداد مرنة',
-      desc: 'نوفر لشركائنا أسعار توريد متميزة من المصادر المباشرة مع أنظمة سداد وتسهيلات تجارية مريحة.',
+      titleAr: 'أسعار تنافسية وتسهيلات سداد مرنة',
+      titleEn: 'Competitive Pricing & Flexible Terms',
+      descAr: 'نوفر لشركائنا أسعار توريد متميزة من المصادر المباشرة مع أنظمة سداد وتسهيلات تجارية مريحة.',
+      descEn: 'Providing direct factory pricing and flexible commercial payment terms for our partners.',
       icon: <DollarSign className="w-6 h-6 text-amber-600" />
     },
     {
-      title: 'فريق دعم فني وهندسي 24/7',
-      desc: 'نوفر مهندسين وفنيين متخصصين لمتابعة عمليات التركيب والتجميع وتقديم الاستشارات الفنية.',
+      titleAr: 'فريق دعم فني وهندسي 24/7',
+      titleEn: '24/7 Technical & Engineering Support',
+      descAr: 'نوفر مهندسين وفنيين متخصصين لمتابعة عمليات التركيب والتجميع وتقديم الاستشارات الفنية.',
+      descEn: 'Dedicated specialized engineers for installation, testing, and continuous technical support.',
       icon: <Headphones className="w-6 h-6 text-amber-600" />
     },
     {
-      title: 'تنوع شمولى وتوريد متكامل',
-      desc: 'قدرة على توريد كافة احتياجات منشأتك في طلب واحد بدلاً من التعامل مع عشرات الموردين.',
+      titleAr: 'تنوع شمولى وتوريد متكامل',
+      titleEn: 'Comprehensive One-Stop Solution',
+      descAr: 'قدرة على توريد كافة احتياجات منشأتك في طلب واحد بدلاً من التعامل مع عشرات الموردين.',
+      descEn: 'Fulfilling all your facility IT and security needs under one single trusted contract.',
       icon: <Award className="w-6 h-6 text-amber-600" />
     },
     {
-      title: 'شراكات وتوكيلات دولية مباشرة',
-      desc: 'علاقات ممتدة وتوكيلات مع كبرى الشركات المصنعة عالمياً توفر لك الأمان والموثوقية.',
+      titleAr: 'شراكات وتوكيلات دولية مباشرة',
+      titleEn: 'Direct International Partnerships',
+      descAr: 'علاقات ممتدة وتوكيلات مع كبرى الشركات المصنعة عالمياً توفر لك الأمان والموثوقية.',
+      descEn: 'Long-standing agency relationships with top global manufacturers for complete peace of mind.',
       icon: <HeartHandshake className="w-6 h-6 text-amber-600" />
     }
   ];
@@ -43,13 +58,16 @@ export default function WhyUs() {
         <div className="max-w-3xl mx-auto text-center space-y-4">
           <div className="inline-flex items-center gap-2 bg-amber-100 border border-amber-300 text-amber-800 text-xs font-extrabold px-3.5 py-1 rounded-full">
             <Award className="w-4 h-4 text-amber-600" />
-            <span>مميزاتنا ونقاط قوتنا</span>
+            <span>{isRtl ? 'مميزاتنا ونقاط قوتنا' : 'Why Choose Us'}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 leading-tight">
-            لماذا تختار شركة المحترف لشراكتك التوريدية؟
+            {isRtl ? 'لماذا تختار شركة المحترف لشراكتك التوريدية والتكنولوجية؟' : 'Why Choose Professional Co. for Your Tech & Supply Partnership?'}
           </h2>
           <p className="text-slate-600 text-sm md:text-base leading-relaxed">
-            نجمع بين الخبرة الطويلة، الموثوقية التامة، والأسعار المنافسة لنكون خيارك الأول والمستدام دائماً.
+            {isRtl 
+              ? 'نجمع بين الخبرة الطويلة، الموثوقية التامة، والأسعار المنافسة لنكون خيارك الأول والمستدام دائماً.'
+              : 'Combining long expertise, total reliability, and competitive pricing to be your first sustainable choice.'
+            }
           </p>
         </div>
 
@@ -60,8 +78,8 @@ export default function WhyUs() {
               <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center shadow-sm">
                 {adv.icon}
               </div>
-              <h3 className="text-base font-extrabold text-slate-900">{adv.title}</h3>
-              <p className="text-xs md:text-sm text-slate-600 leading-relaxed">{adv.desc}</p>
+              <h3 className="text-base font-extrabold text-slate-900">{isRtl ? adv.titleAr : adv.titleEn}</h3>
+              <p className="text-xs md:text-sm text-slate-600 leading-relaxed">{isRtl ? adv.descAr : adv.descEn}</p>
             </div>
           ))}
         </div>

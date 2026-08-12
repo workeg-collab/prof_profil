@@ -1,4 +1,5 @@
 import React from 'react';
+import { LanguageProvider } from './context/LanguageContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import AboutSection from './components/AboutSection';
@@ -11,18 +12,20 @@ import ContactFooter from './components/ContactFooter';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 font-['Cairo',sans-serif] selection:bg-amber-500 selection:text-white">
-      <Header />
-      <main>
-        <Hero />
-        <AboutSection />
-        <CompanyPolicies />
-        <ServicesSection />
-        <ClientsSection />
-        <WhyUs />
-        <QuoteFormSection />
-      </main>
-      <ContactFooter />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen bg-slate-50 text-slate-800 font-['Cairo',sans-serif] selection:bg-amber-500 selection:text-white transition-all duration-300">
+        <Header />
+        <main>
+          <Hero />
+          <AboutSection />
+          <CompanyPolicies />
+          <ServicesSection />
+          <ClientsSection />
+          <WhyUs />
+          <QuoteFormSection />
+        </main>
+        <ContactFooter />
+      </div>
+    </LanguageProvider>
   );
 }
