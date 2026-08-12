@@ -30,7 +30,7 @@ export default function Header() {
         {/* Brand & Logo */}
         <a href="#hero" className="flex items-center gap-3 group">
           <img 
-            src="/images/logo.jpg" 
+            src="/images/logo.png" 
             alt="Logo" 
             className="w-11 h-11 object-contain rounded-xl bg-slate-50 p-1 border border-amber-200 shadow-md group-hover:scale-105 transition-transform" 
           />

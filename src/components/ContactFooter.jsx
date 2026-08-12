@@ -82,7 +82,7 @@ export default function ContactFooter() {
           {/* Col 1: About */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <img src="/images/logo.jpg" alt="Logo" className="w-10 h-10 object-contain rounded-xl bg-white p-1" />
+              <img src="/images/logo.png" alt="Logo" className="w-10 h-10 object-contain rounded-xl bg-white p-1" />
               <div>
                 <h3 className="text-lg font-black text-slate-100">{isRtl ? 'شركة المحترف للتجارة والتوريدات' : 'Professional Trading & Supplies'}</h3>
                 <p className="text-xs text-amber-400 font-bold">Professional Trading & Supplies Co.</p>
